@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var decideBtn: Button
     private lateinit var selectFoodText: TextView
     private lateinit var addFood: Button
+    private lateinit var textView: TextView
 
     private val foodList = arrayListOf("Chinese", "Italian", "Spanish", "Indian", "Arabian")
 
@@ -17,10 +18,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        decideBtn = findViewById(R.id.decideBtn)
+        selectFoodText = findViewById(R.id.selectFoodText)
+        addFood = findViewById(R.id.addFood)
+        textView = findViewById(R.id.textView)
+
         decideBtn.setOnClickListener {
             val random = Random()
             val randomFood = random.nextInt(foodList.count())
-            selectFoodText.text = foodList[randomFood]
+            textView.text = foodList[randomFood]
         }
 
 
